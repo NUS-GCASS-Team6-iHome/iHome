@@ -1,10 +1,10 @@
-package com.ihome.account;
+package com.ihome.payment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AccountServiceApplicationTests {
+class PaymentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
