@@ -21,8 +21,8 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public Account findAccountById(@PathVariable("id") Long accountId) {
+    public Account findByAccountId(@PathVariable("id") Integer accountId) {
         log.info("AccountController findAccountById()");
-        return accountService.findAccountById(accountId);
+        return accountService.findByAccountId(accountId);
     }
 }
