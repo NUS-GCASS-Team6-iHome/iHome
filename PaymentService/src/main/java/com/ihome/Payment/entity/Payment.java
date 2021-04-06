@@ -1,4 +1,4 @@
-package com.ihome.payment.entity;
+package com.ihome.Payment.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

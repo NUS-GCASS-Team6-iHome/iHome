@@ -1,7 +1,7 @@
-package com.ihome.payment.controller;
+package com.ihome.Payment.controller;
 
-import com.ihome.payment.entity.Payment;
-import com.ihome.payment.service.PaymentService;
+import com.ihome.Payment.entity.Payment;
+import com.ihome.Payment.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +14,8 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @PostMapping("/")
-    public Account savePayment( @RequestBody Payment payment) {
+    /*@PostMapping("/")
+    public Payment savePayment( @RequestBody Payment payment) {
         log.info("PaymentController savePayment()");
         return paymentService.savePayment(payment);
     }
@@ -24,5 +24,5 @@ public class PaymentController {
     public Payment findPaymentById(@PathVariable("id") Long paymentId) {
         log.info("PaymentController findPaymentById()");
         return paymentService.findPaymentById(paymentId);
-    }
+    }*/
 }

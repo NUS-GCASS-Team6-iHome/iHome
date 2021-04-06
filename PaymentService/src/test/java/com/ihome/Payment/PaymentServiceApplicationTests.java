@@ -1,4 +1,4 @@
-package com.ihome.payment;
+package com.ihome.Payment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
