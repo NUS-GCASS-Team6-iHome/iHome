@@ -13,7 +13,8 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
-
+    
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/")
     public Account saveAccount( @RequestBody Account account) {
         log.info("AccountController saveAccount()");
