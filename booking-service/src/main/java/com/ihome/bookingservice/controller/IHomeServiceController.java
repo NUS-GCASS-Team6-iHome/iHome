@@ -3,7 +3,8 @@ package com.ihome.bookingservice.controller;
 
 import com.ihome.bookingservice.entity.IHomeService;
 import com.ihome.bookingservice.service.IHomeServiceService;
-import dto.iHomeServiceLoaderDTO;
+import dto.IHomeServiceLoaderDTO;
+import dto.IHomeServiceSearchDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/iHomeService")
@@ -21,8 +24,14 @@ public class IHomeServiceController {
     private IHomeServiceService iHomeServiceService;
 
     @PostMapping("/save")
-    public IHomeService saveIHomeService(@RequestBody iHomeServiceLoaderDTO iHomeServiceLoaderDTO){
+    public IHomeService saveIHomeService(@RequestBody IHomeServiceLoaderDTO iHomeServiceLoaderDTO){
         return iHomeServiceService.save(convertToDto(iHomeServiceLoaderDTO));
+    }
+
+    @PostMapping("/getSearchResult")
+    public List<IHomeService> getSearchResult(@RequestBody IHomeServiceSearchDTO iHomeServiceSearchDTO){
+        List<IHomeService> services = iHomeServiceService.searchByCriteria(iHomeServiceSearchDTO);
+        return services;
     }
 
 //    @PostMapping("/")
@@ -37,7 +46,7 @@ public class IHomeServiceController {
 
 
     // converter
-    private IHomeService convertToDto(iHomeServiceLoaderDTO dto) {
+    private IHomeService convertToDto(IHomeServiceLoaderDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         IHomeService iHomeService = modelMapper.map(dto, IHomeService.class);
         return iHomeService;

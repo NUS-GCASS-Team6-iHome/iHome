@@ -27,9 +27,11 @@ public class IHomeService {
     @Column(name="SVC_TYPE")
     private String serviceType;
     @Column(name="SVC_RATE")
-    private Integer serviceRate;
+    private int serviceRate;
     @Column(name="SVC_RATE_UNIT")
     private String serviceRateUnit;
+    @Column(name="DISTRICT")
+    private String district;
 
     public String getServiceID() {
         return serviceID;
@@ -71,11 +73,11 @@ public class IHomeService {
         this.serviceType = serviceType;
     }
 
-    public Integer getServiceRate() {
+    public int getServiceRate() {
         return serviceRate;
     }
 
-    public void setServiceRate(Integer serviceRate) {
+    public void setServiceRate(int serviceRate) {
         this.serviceRate = serviceRate;
     }
 
@@ -85,5 +87,13 @@ public class IHomeService {
 
     public void setServiceRateUnit(String serviceRateUnit) {
         this.serviceRateUnit = serviceRateUnit;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
     }
 }
