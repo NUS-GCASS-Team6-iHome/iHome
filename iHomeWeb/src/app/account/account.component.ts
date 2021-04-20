@@ -23,19 +23,19 @@ export class AccountComponent implements OnInit {
     this.accountService.getAccount(this.username).subscribe(
       response => this.handleGetAccountSuccess(response),
     );
-    if (this.loginAccount) {
-      if (this.loginservice.authenticate(this.username, this.password, this.loginAccount)
-      ) {
-        this.router.navigate([''])
-        this.invalidLogin = false
-      } else
-        this.invalidLogin = true
-    }
 
   }
 
   handleGetAccountSuccess(response: Account) {
     this.loginAccount = response;
+    if (this.loginAccount) {
+      if (this.loginservice.authenticate(this.username, this.password, this.loginAccount)
+      ) {
+        this.router.navigate(['home'])
+        this.invalidLogin = false
+      } else
+        this.invalidLogin = true
+    }
   }
 
 }

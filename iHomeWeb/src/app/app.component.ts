@@ -7,7 +7,7 @@ import { AuthenticationService } from './service/authentication.service';
 })
 export class AppComponent implements OnInit{
   title = 'iHomeWeb';
-  constructor(private loginService:AuthenticationService){ }
+  constructor(public loginService:AuthenticationService){ }
   ngOnInit() {
   }
 }
