@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 export class Account {
   constructor(
@@ -22,5 +22,9 @@ export class AccountServiceService {
 
   public register(account: Account) {
     return this.httpClient.post<Account>("http://localhost:9001/account/", account)
+  }
+
+  public getAccount(username: string) {
+    return this.httpClient.get<Account>('http://localhost:9001/account' + "/" + username);
   }
 }

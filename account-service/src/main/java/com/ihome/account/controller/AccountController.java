@@ -13,7 +13,7 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
-    
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/")
     public Account saveAccount( @RequestBody Account account) {
@@ -21,9 +21,10 @@ public class AccountController {
         return accountService.saveAccount(account);
     }
 
-    @GetMapping("/{id}")
-    public Account findByAccountId(@PathVariable("id") Integer accountId) {
-        log.info("AccountController findAccountById()");
-        return accountService.findByAccountId(accountId);
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/{username}")
+    public Account findByUsername(@PathVariable("username") String username) {
+        log.info("AccountController findByUsername()");
+        return accountService.findByUsername(username);
     }
 }

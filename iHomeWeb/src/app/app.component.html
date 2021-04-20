@@ -3,7 +3,7 @@
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a *ngIf="!loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/login">Login</a>
-        <a class="nav-item nav-link" routerLink="/register">Register</a>
+        <a *ngIf="!loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/register">Register</a>
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/logout">Logout</a>
     </div>
 </nav>

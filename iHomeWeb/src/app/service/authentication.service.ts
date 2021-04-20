@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Account } from './account-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,8 @@ export class AuthenticationService {
 
   constructor() { }
 
-  authenticate(username: string, password: string) {
-    if (username === "javainuse" && password === "password") {
+  authenticate(username: string, password: string, account: Account) {
+    if (username === account.username && password === account.password) {
       sessionStorage.setItem('username', username)
       return true;
     } else {
@@ -21,7 +22,7 @@ export class AuthenticationService {
     return !(user === null)
   }
 
-  logOut() {
+  logout() {
     sessionStorage.removeItem('username')
   }
 }

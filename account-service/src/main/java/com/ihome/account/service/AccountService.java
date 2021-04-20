@@ -18,8 +18,8 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
-    public Account findByAccountId(Integer accountId) {
-        log.info("AccountService findAccountById()");
-        return accountRepository.findByAccountid(accountId);
+    public Account findByUsername(String username) {
+        log.info("AccountService findByUsername()");
+        return accountRepository.findByUsername(username);
     }
 }
