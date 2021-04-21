@@ -1,5 +1,6 @@
 <div class="col-md-12">
     <h2 class="text-center">Profile</h2>
+    <span style="color:green" *ngIf="isUpdated">Profile updated successfully!</span>
     <form method="POST">
         <div class="form-group">
             <label for="username">Username:</label>
@@ -27,7 +28,6 @@
 
         <div class="form-group">
             <label for="usertype">User Type:</label>
-            <br>
             <input type="text" [(ngModel)]="user.usertype" class="form-control" name="usertype" id="usertype" disabled>
         </div>
 

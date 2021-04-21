@@ -6,7 +6,7 @@ import { AccountServiceService, Account } from '../service/account-service.servi
   templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
-  user: Account = new Account('', '', '', '', '', '');
+  user: Account = new Account('', '', '', '', '', '', '');
 
   constructor(
     private accountService: AccountServiceService,

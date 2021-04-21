@@ -12,7 +12,7 @@ export class AccountComponent implements OnInit {
   password = ''
   invalidLogin = false
   accountNotFound = false
-  loginAccount = new Account('', '', '', '', '', '')
+  loginAccount = new Account('', '', '', '', '', '', '')
 
   constructor(private router: Router,
     private loginservice: AuthenticationService,

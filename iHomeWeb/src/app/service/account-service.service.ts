@@ -3,12 +3,13 @@ import {HttpClient} from '@angular/common/http';
 
 export class Account {
   constructor(
-    public  username: string,
-    public  email: string,
-    public  address: string,
-    public  mobile: string,
-    public  usertype: string,
-    public  password: string,
+    public accountid: string,
+    public username: string,
+    public email: string,
+    public address: string,
+    public mobile: string,
+    public usertype: string,
+    public password: string
   ) {
   }
 }
@@ -16,7 +17,7 @@ export class Account {
   providedIn: 'root'
 })
 export class AccountServiceService {
-  private loginAccount = new Account('', '', '', '', '', '');
+  private loginAccount = new Account('', '', '', '', '', '', '');
 
   constructor(private httpClient: HttpClient) { }
 
@@ -34,5 +35,9 @@ export class AccountServiceService {
 
   public getAccount(username: string) {
     return this.httpClient.get<Account>('http://localhost:9001/account' + "/" + username);
+  }
+
+  public updateAccount(account: Account) {
+    return this.httpClient.put<Account>("http://localhost:9001/account/", account)
   }
 }
