@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   register(): void {
     this.accountService.register(this.user)
         .subscribe( data => {
-          alert("Account created successfully.");
+          this.router.navigate(['register-success'])
         });
 
   };

@@ -10,13 +10,17 @@ import { HomeComponent } from './home';
 import { RegisterComponent } from './register';
 import { LogoutComponent } from './logout/logout.component';
 import { FormsModule } from '@angular/forms';
+import { RegisterSuccessComponent } from './register/register-success.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
     HomeComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegisterSuccessComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

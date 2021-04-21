@@ -1,4 +1,6 @@
 ﻿<h2>Login</h2>
+<span *ngIf="invalidLogin" style="color:red">Login failed. Password is invalid.</span>
+<span *ngIf="accountNotFound" style="color:red">Login failed. Account not found, please <a routerLink="/register">register</a> here!</span>
 <form>
     <div class="form-group">
         <label for="username">Username:</label>
