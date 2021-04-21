@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterSuccessComponent } from './register/register-success.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PaymentComponent } from './payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     LogoutComponent,
     RegisterSuccessComponent,
-    ProfileComponent
+    ProfileComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

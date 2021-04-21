@@ -22,4 +22,9 @@ public class AccountService {
         log.info("AccountService findByUsername()");
         return accountRepository.findByUsername(username);
     }
+
+    public Account updateAccount(Account account) {
+        log.info("AccountService updateAccount()");
+        return accountRepository.save(account);
+    }
 }

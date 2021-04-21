@@ -7,13 +7,15 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './service/auth-guard.service';
 import { RegisterSuccessComponent } from './register/register-success.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PaymentComponent } from './payment/payment.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: AccountComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'register-success', component: RegisterSuccessComponent,canActivate:[AuthGaurdService]},
+  {path: 'register-success', component: RegisterSuccessComponent},
   {path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGaurdService]},
+  {path: 'payment', component: PaymentComponent,canActivate:[AuthGaurdService]},
 
   // otherwise redirect to home
   {path: '**', redirectTo: 'login'}

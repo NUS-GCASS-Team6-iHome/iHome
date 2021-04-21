@@ -27,4 +27,11 @@ public class AccountController {
         log.info("AccountController findByUsername()");
         return accountService.findByUsername(username);
     }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/")
+    private Account updateAccount(@RequestBody Account account)
+    {
+        log.info("AccountController updateAccount()");
+        return accountService.updateAccount(account);
+    }
 }
