@@ -1,0 +1,65 @@
+<!-- get search criteria -->
+<div class="col-md-12">
+    <h2 class="text-center">Booking now</h2>
+    <form>
+        <!-- method="POST"  -->
+        <div class="form-group">
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" [(ngModel)]="searchCriteria.postalCode" placeholder="PostalCode" name="postalCode" class="form-control"
+                id="postalCode">
+        </div>
+        <div class="form-group">
+            <label for="serviceType">Service Type:</label>
+            <select name="serviceType" [(ngModel)]="searchCriteria.serviceType">
+                <option *ngFor="let serviceType of serviceTypes | keyvalue" [value]="serviceType.key"
+                    [innerHTML]="serviceType.value"></option>
+            </select>
+            <!-- <input type="text" [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="email"> -->
+        </div>
+
+        <div class="form-group">
+            <label for="budget">Budget per hour/unit/sqf:</label>
+            <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+        </div>
+
+        <button class="btn btn-success" (click)="search(searchCriteria)">Search</button>
+    </form>
+</div>
+
+
+<!-- display result -->
+
+<div class="generic-container" *ngIf="show">
+    <br>
+        <hr class="style2">
+    <div class="panel panel-default">
+       
+      <div class="row">
+        <h2 class="text-center">List of Products</h2>
+      </div>
+      <div class="tablecontainer">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Service Name</th>
+            <th>Service Description</th>
+            <th>Service Provider Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of serviceList">
+            <td><span>{{product.serviceName}}</span></td>
+            <td><span>{{product.serviceDescription}}</span></td>
+            <td><span>{{product.serviceProviderID}}</span></td>
+            <td><span>{{product.serviceRate}}</span></td>
+            <td><span>{{product.serviceRateUnit}}</span></td>
+            <td><button class="btn btn-success" (click)="book(product)">Book</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

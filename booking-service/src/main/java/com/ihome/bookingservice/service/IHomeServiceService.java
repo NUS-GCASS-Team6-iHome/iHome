@@ -1,6 +1,7 @@
 package com.ihome.bookingservice.service;
 
 import com.ihome.bookingservice.entity.IHomeService;
+import com.ihome.bookingservice.entity.ServiceType;
 import com.ihome.bookingservice.repository.IHomeServiceRepository;
 import dto.IHomeServiceSearchDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class IHomeServiceService {
         String district = iHomeService.getPostalCode().substring(0,2);
 
         // to get search result
-        List<IHomeService> iHomeServiceList = iHomeServiceRepository.findAllByDistrictAndServiceTypeAndBudget(district, iHomeService.getServiceType(), iHomeService.getMinBudget(), iHomeService.getMaxBudget());
+        List<IHomeService> iHomeServiceList = iHomeServiceRepository.findAllByDistrictAndServiceTypeAndBudget(district, ServiceType.valueOf(iHomeService.getServiceType()), iHomeService.getMinBudget(), iHomeService.getMaxBudget());
         return iHomeServiceList;
     }
 }

@@ -25,7 +25,8 @@ public class IHomeService {
     @Column(name="SVC_PRVD_ID")
     private Integer serviceProviderID;
     @Column(name="SVC_TYPE")
-    private String serviceType;
+    @Enumerated(EnumType.STRING)
+    private ServiceType serviceType;
     @Column(name="SVC_RATE")
     private int serviceRate;
     @Column(name="SVC_RATE_UNIT")
@@ -65,11 +66,11 @@ public class IHomeService {
         this.serviceProviderID = serviceProviderID;
     }
 
-    public String getServiceType() {
+    public ServiceType getServiceType() {
         return serviceType;
     }
 
-    public void setServiceType(String serviceType) {
+    public void setServiceType(ServiceType serviceType) {
         this.serviceType = serviceType;
     }
 

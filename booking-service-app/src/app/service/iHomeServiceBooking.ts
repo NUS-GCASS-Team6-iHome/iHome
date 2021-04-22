@@ -7,7 +7,7 @@ export class iHomeServiceBooking {
     public  serviceType: string,
     public  minBudget: number,
     public  maxBudget: number,
-    public  district: string,
+    public  postalCode: string,
   ) { 
     
   }
@@ -26,5 +26,9 @@ export class HttpClientService {
   getBookingSearchCriteria(){
     console.log("booking page");
     return this.httpClient.get<iHomeServiceBooking>('http://localhost:8081/iHomeServiceBookingWeb')
+  }
+  getServiceType(){
+    console.log("getServiceType");
+    return this.httpClient.get<iHomeServiceBooking>('http://localhost:8080/iHomeService/getServiceType')
   }
 }

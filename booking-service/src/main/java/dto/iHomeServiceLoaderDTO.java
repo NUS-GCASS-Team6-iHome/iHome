@@ -9,7 +9,6 @@ public class IHomeServiceLoaderDTO {
     private String serviceType;
     private int serviceRate;
     private String serviceRateUnit;
-    private String serviceDistrict;
 
     public String getServiceName() {
         return serviceName;
@@ -59,11 +58,4 @@ public class IHomeServiceLoaderDTO {
         this.serviceRateUnit = serviceRateUnit;
     }
 
-    public String getServiceDistrict() {
-        return serviceDistrict;
-    }
-
-    public void setServiceDistrict(String serviceDistrict) {
-        this.serviceDistrict = serviceDistrict;
-    }
 }

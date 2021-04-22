@@ -1,1 +1,65 @@
-<p>i-home-service works!</p>
+<!-- get search criteria -->
+<div class="col-md-12">
+    <h2 class="text-center">Booking now</h2>
+    <form class="form-inline">
+        <!-- method="POST"  -->
+      <div class="form-group">
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" [(ngModel)]="searchCriteria.postalCode" placeholder="Postal Code" name="postalCode" class="form-control" id="postalCode">
+      </div>
+      {{serviceTypes}}
+      <div class="form-group">
+        <label for="serviceType">Service Type:</label>
+        <select name="serviceType" [(ngModel)]="searchCriteria.serviceType"> 
+            <option *ngFor="let serviceType of serviceTypes | keyvalue" [value]="serviceType.key" [innerHTML]="serviceType.value"></option> 
+        </select> 
+        <!-- <input type="text" [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="email"> -->
+      </div>
+    
+      <div class="form-group">
+        <label for="budget">Budget:</label>
+        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+      </div>
+    
+      <button class="btn btn-success" (click)="search()">Search</button>
+    </form>
+    </div>
+
+
+<!-- display result -->
+<!-- <div class="generic-container">
+    <div class="panel panel-default">
+      <!-- Default panel contents 
+      <div class="row">
+        <center><h2>List of Products</h2></center>
+      </div>
+      <div class="panel-heading"><span class="lead">List of Products</span>
+      </div>
+      <div class="tablecontainer">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Product Id</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image Url</th>
+            <th>Price</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of products">
+            <td><span>{{product.productId}}</span></td>
+            <td><span>{{product.name}}</span></td>
+            <td><span>{{product.code}}</span></td>
+            <td><span>{{product.title}}</span></td>
+            <td><span>{{product.description}}</span></td>
+            <td><span>{{product.imgUrl}}</span></td>
+            <td><span>{{product.price}}</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> -->

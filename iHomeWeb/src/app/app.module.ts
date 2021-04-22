@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { RegisterSuccessComponent } from './register/register-success.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
+import { IhomeBookingServiceComponent } from './ihome-booking-service/ihome-booking-service.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { IhomeBookingComponent } from './ihome-booking/ihome-booking.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +26,17 @@ import { PaymentComponent } from './payment/payment.component';
     LogoutComponent,
     RegisterSuccessComponent,
     ProfileComponent,
-    PaymentComponent
+    PaymentComponent,
+    IhomeBookingServiceComponent,
+    IhomeBookingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

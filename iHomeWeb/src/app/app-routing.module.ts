@@ -8,6 +8,9 @@ import { AuthGaurdService } from './service/auth-guard.service';
 import { RegisterSuccessComponent } from './register/register-success.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
+import { IhomeBookingServiceComponent } from './ihome-booking-service/ihome-booking-service.component';
+import { IhomeBookingComponent } from './ihome-booking/ihome-booking.component';
+
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: AccountComponent},
@@ -16,6 +19,8 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGaurdService]},
   {path: 'payment', component: PaymentComponent,canActivate:[AuthGaurdService]},
+  {path: 'iHomeService', component: IhomeBookingServiceComponent},
+  {path: 'iHomeService/book/:id', component: IhomeBookingComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: 'login'}

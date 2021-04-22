@@ -8,16 +8,14 @@ import dto.IHomeServiceSearchDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/iHomeService")
 @Slf4j
+@CrossOrigin(origins = "http://localhost:4200")
 public class IHomeServiceController {
 
     @Autowired
@@ -30,6 +28,12 @@ public class IHomeServiceController {
 
     @PostMapping("/getSearchResult")
     public List<IHomeService> getSearchResult(@RequestBody IHomeServiceSearchDTO iHomeServiceSearchDTO){
+        List<IHomeService> services = iHomeServiceService.searchByCriteria(iHomeServiceSearchDTO);
+        return services;
+    }
+
+    @PostMapping("/getServiceToDisplay")
+    public List<IHomeService> getServiceToDisplay(@RequestBody IHomeServiceSearchDTO iHomeServiceSearchDTO){
         List<IHomeService> services = iHomeServiceService.searchByCriteria(iHomeServiceSearchDTO);
         return services;
     }
