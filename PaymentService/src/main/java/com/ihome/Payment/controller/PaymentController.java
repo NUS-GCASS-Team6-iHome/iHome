@@ -14,6 +14,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/")
     public Payment savePayment(@RequestBody Payment payment) {
         log.info("PaymentController savePayment()");
