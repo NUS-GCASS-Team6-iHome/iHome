@@ -21,6 +21,7 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent,canActivate:[AuthGaurdService]},
   {path: 'iHomeService', component: IhomeBookingServiceComponent},
   {path: 'iHomeService/book/:id', component: IhomeBookingComponent},
+  {path: 'payment', component: PaymentComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: 'login'}
