@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'register-success', component: RegisterSuccessComponent},
   {path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGaurdService]},
-  {path: 'payment', component: PaymentComponent,canActivate:[AuthGaurdService]},
+  {path: 'payment', component: PaymentComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: 'login'}
