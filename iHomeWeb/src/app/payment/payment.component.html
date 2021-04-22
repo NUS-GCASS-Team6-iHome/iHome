@@ -1,1 +1,18 @@
-<p>payment works!</p>
+ac<div class="col-md-12">
+  <h2 class="text-center">Payment</h2>
+  <form method="POST">
+    <div class="form-group">
+      <label for="paymentType">paymentType:</label>
+      <input type="text" [(ngModel)]="payment.paymentType" placeholder="Payment Type" name="paymentType" class="form-control"
+             id="paymentType">
+    </div>
+
+    <div class="form-group">
+      <label for="paymentStatus">Payment ype:</label>
+      <input type="text" [(ngModel)]="payment.paymentStatus" placeholder="Payment Status" name="paymentStatus" class="form-control"
+             id="paymentStatus">
+    </div>
+
+    <button class="btn btn-success" (click)="submitPayment()">Register</button>
+  </form>
+</div>

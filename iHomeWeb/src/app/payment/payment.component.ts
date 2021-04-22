@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
+  payment : Payment = new Payment('', '', '');
 
-  constructor() { }
+  constructor(
+      private paymentService: PaymentService,
+      private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
+
+  submitPayment(): void {
+      this.paymentService.createPayment(this.payment)
+          .subscribe( data => {
+            this.router.navigate(['register-success'])
+          });
+
+    };
 
 }
