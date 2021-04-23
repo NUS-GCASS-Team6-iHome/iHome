@@ -1,5 +1,6 @@
 <div class="col-md-12">
     <h2 class="text-center">Registration</h2>
+    <span *ngIf="isUsernameExist" style="color:red">Username is existed. Please change another username.</span>
     <form method="POST">
         <div class="form-group">
             <label for="username">Username:</label>

@@ -7,7 +7,7 @@ import { AccountServiceService, Account } from '../service/account-service.servi
 })
 export class RegisterComponent implements OnInit {
   user: Account = new Account('', '', '', '', '', '', '');
-
+  isUsernameExist = false;
   constructor(
     private accountService: AccountServiceService,
     private router: Router
@@ -17,13 +17,23 @@ export class RegisterComponent implements OnInit {
   }
 
   register(): void {
-    this.accountService.register(this.user)
-        .subscribe( data => {
-          this.router.navigate(['register-success'])
-        });
-
+    // check whether username is existed
+    this.accountService.getAccount(this.user.username).subscribe(
+      response => this.handleGetAccountSuccess(response),
+    );
   };
 
-
+  handleGetAccountSuccess(response: Account) {
+    const account = response;
+    if (account) {
+      this.isUsernameExist = true;
+    } else {
+      this.isUsernameExist = false;
+      this.accountService.register(this.user)
+        .subscribe(data => {
+          this.router.navigate(['register-success'])
+        });
+    }
+  }
 
 }

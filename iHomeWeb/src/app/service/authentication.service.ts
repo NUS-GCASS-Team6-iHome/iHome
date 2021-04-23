@@ -9,7 +9,7 @@ export class AuthenticationService {
   constructor() { }
 
   authenticate(username: string, password: string, account: Account) {
-    if (username === account.username && password === account.password) {
+    if (username.toUpperCase() === account.username.toUpperCase() && password === account.password) {
       sessionStorage.setItem('username', username)
       return true;
     } else {
