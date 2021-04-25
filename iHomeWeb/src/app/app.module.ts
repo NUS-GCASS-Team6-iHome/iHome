@@ -16,6 +16,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { IhomeBookingServiceComponent } from './ihome-booking-service/ihome-booking-service.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { IhomeBookingComponent } from './ihome-booking/ihome-booking.component';
+import { RatingComponent } from './rating/rating.component';
+import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { IhomeBookingComponent } from './ihome-booking/ihome-booking.component';
     ProfileComponent,
     PaymentComponent,
     IhomeBookingServiceComponent,
-    IhomeBookingComponent
+    IhomeBookingComponent,
+    RatingComponent,
+    BookingSummaryComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@
     <div class="navbar-nav">
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/home">Home</a>
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/profile">Profile</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/booking-summary">Booking Summary</a>
         <a *ngIf="!loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/login">Login</a>
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-item nav-link" routerLink="/logout">Logout</a>
     </div>

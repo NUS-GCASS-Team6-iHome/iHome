@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <h2 class="text-center">Rate this service</h2>
+    <form>
+        <div class="form-group">
+            <label for="comment">Rating:</label>
+            <br>
+            <div class="rate">
+                <input type="radio" [(ngModel)]="rating.rating" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 </label>
+                <input type="radio" [(ngModel)]="rating.rating" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 </label>
+                <input type="radio" [(ngModel)]="rating.rating" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 </label>
+                <input type="radio" [(ngModel)]="rating.rating" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 </label>
+                <input type="radio" [(ngModel)]="rating.rating" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 </label>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <br>
+            <input type="text" [(ngModel)]="rating.comment" placeholder="Comment" name="comment" class="form-control"
+                id="comment">
+        </div>
+        <br>
+        <button class="btn btn-success" (click)="create()">Submit</button>
+    </form>
+</div>
