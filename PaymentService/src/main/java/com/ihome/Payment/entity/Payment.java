@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -16,4 +17,6 @@ public class Payment {
     private Integer paymentId;
     private String paymentType;
     private String paymentStatus;
+    private Date transactionDate;
+
 }
