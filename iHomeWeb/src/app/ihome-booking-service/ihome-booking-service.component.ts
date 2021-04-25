@@ -80,7 +80,8 @@ export class IhomeBookingServiceComponent implements OnInit {
     )
   }
   book(service: IHomeService){
-    this.router.navigate(["/iHomeService/book", service.serviceID, service]);
+    this.searchBookings.setServiceDetails(service);
+    this.router.navigate(["/iHomeService/book", service.serviceID]);
   }
 
 }

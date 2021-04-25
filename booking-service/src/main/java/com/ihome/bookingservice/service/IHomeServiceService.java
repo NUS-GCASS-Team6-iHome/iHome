@@ -27,4 +27,8 @@ public class IHomeServiceService {
         List<IHomeService> iHomeServiceList = iHomeServiceRepository.findAllByDistrictAndServiceTypeAndBudget(district, ServiceType.valueOf(iHomeService.getServiceType()), iHomeService.getMinBudget(), iHomeService.getMaxBudget());
         return iHomeServiceList;
     }
+    public IHomeService getService(String serviceID) {
+        return iHomeServiceRepository.findByServiceID(serviceID);
+    }
+
 }

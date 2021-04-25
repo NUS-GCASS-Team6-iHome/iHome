@@ -1,1 +1,35 @@
-<p>ihome-booking works!</p>
+<div class="generic-container">
+    <br>
+        <hr class="style2">
+    <div class="panel panel-default">
+       
+      <div class="row">
+        <h2 class="text-center">Booking Cart</h2>
+      </div>
+      <div class="tablecontainer">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Service Name</th>
+            <th>Service Provider Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span>{{bookingService.serviceName}}</span></td>
+            <td><span>{{bookingService.serviceProviderID}}</span></td>
+            <td><span>{{bookingService.serviceRate}}</span></td>
+            <td><span>{{bookingService.serviceRateUnit}}</span></td>
+            <td></td>
+            <!-- <td><button class="btn btn-success" (click)="book(product)">Book</button></td> -->
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -29,7 +29,9 @@ export class SearchCriteria {
 export class SearchBookingService {
  
   apiRoot = 'http://localhost:8080/iHomeService/getSearchResult';
+  //apiGetDetails = 'http://localhost:8080/iHomeService/getService/${serviceID}';
   
+  serviceDetail: IHomeService;
 
   constructor( private http: HttpClient) { 
   }
@@ -37,4 +39,11 @@ export class SearchBookingService {
   search(searchCriteria: any): Observable<any>{
     return this.http.post(this.apiRoot, searchCriteria);
   }
+
+  setServiceDetails(item: IHomeService){
+   this.serviceDetail = item;
+  }
+  getServiceDetails(){
+    return this.serviceDetail;
+   }
 }

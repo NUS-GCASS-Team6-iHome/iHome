@@ -8,6 +8,7 @@ import dto.IHomeServiceSearchDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,9 +33,9 @@ public class IHomeServiceController {
         return services;
     }
 
-    @PostMapping("/getServiceToDisplay")
-    public List<IHomeService> getServiceToDisplay(@RequestBody IHomeServiceSearchDTO iHomeServiceSearchDTO){
-        List<IHomeService> services = iHomeServiceService.searchByCriteria(iHomeServiceSearchDTO);
+    @GetMapping("/getService")
+    public IHomeService getServiceToDisplay( @RequestParam("serviceID") String serviceID){
+        IHomeService services = iHomeServiceService.getService(serviceID);
         return services;
     }
 

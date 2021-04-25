@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 
-@Injectable({
-  providedIn: 'root'
-})
 
 export class searchCriteria {
   constructor(
@@ -23,6 +20,10 @@ export class serviceResults {
   ) {
   }
 }
+
+@Injectable({
+  providedIn: 'root'
+})
 export class BookingServiceService {
 
   constructor(private httpClient: HttpClient

@@ -15,4 +15,5 @@ public interface IHomeServiceRepository extends JpaRepository<IHomeService, Inte
     @Query("select u FROM IHomeService u where u.district = :district and u.serviceType=:serviceType and u.serviceRate <= :maxBudget and u.serviceRate >= :minBudget")
     public List<IHomeService> findAllByDistrictAndServiceTypeAndBudget(@Param("district") String district, @Param("serviceType") ServiceType serviceType, @Param("minBudget") int minBudget, @Param("maxBudget") int maxBudget );
 
+    public IHomeService findByServiceID(String serviceID);
 }

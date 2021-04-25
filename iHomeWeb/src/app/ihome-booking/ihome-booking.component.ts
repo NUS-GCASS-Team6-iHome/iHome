@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { searchCriteria } from '../service/booking-service.service';
 import { SearchBookingService, IHomeService } from '../service/search-booking.service';
 
 
@@ -10,13 +11,27 @@ import { SearchBookingService, IHomeService } from '../service/search-booking.se
 })
 export class IhomeBookingComponent implements OnInit {
 
+  bookingServiceID !: string;
   bookingService: IHomeService;
   constructor(
+    private searchBookings: SearchBookingService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => this.bookingService = params['service']);
+    this.route.params.subscribe((params: Params) => this.bookingServiceID = params['service']);
+    // get service info
+    this.bookingService = this.searchBookings.getServiceDetails();
+    console.log(this.bookingService);
+
+    // this.searchBookings.getServiceDetails(this.bookingServiceID).subscribe(
+    //   data => {
+    //     console.log(data);
+    //     this.bookingService = data;
+
+    //   }
+    // )
+    
   }
 
 }
