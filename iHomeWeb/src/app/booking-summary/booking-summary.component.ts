@@ -15,5 +15,7 @@ export class BookingSummaryComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  Rate(item: any){
 
+  }
 }

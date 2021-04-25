@@ -33,11 +33,11 @@ public class IHomeServiceController {
         return services;
     }
 
-    @GetMapping("/getService")
-    public IHomeService getServiceToDisplay( @RequestParam("serviceID") String serviceID){
-        IHomeService services = iHomeServiceService.getService(serviceID);
-        return services;
-    }
+//    @GetMapping("/getService")
+//    public IHomeService getServiceToDisplay( @RequestParam("serviceID") String serviceID){
+//        IHomeService services = iHomeServiceService.getService(serviceID);
+//        return services;
+//    }
 
 //    @PostMapping("/")
 //    public IHomeService findIHomeServiceByUserPreference(@RequestBody IHomeService iHomeService){
