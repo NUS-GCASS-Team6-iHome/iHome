@@ -19,6 +19,7 @@ export class PaymentComponent implements OnInit {
   }
 
   submitPayment(): void {
+  console.log(this.payment);
       this.paymentService.createPayment(this.payment)
           .subscribe( data => {
             this.router.navigate(['register-success'])

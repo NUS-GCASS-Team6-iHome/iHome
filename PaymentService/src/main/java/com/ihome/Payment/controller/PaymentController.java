@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/payments")
 @Slf4j
@@ -18,6 +20,8 @@ public class PaymentController {
     @PostMapping("/")
     public Payment savePayment(@RequestBody Payment payment) {
         log.info("PaymentController savePayment()");
+        Date date = new Date();
+        payment.setTransactionDate(date);
         return paymentService.savePayment(payment);
     }
 

@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'register-success', component: RegisterSuccessComponent},
   {path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGaurdService]},
-  {path: 'payment', component: PaymentComponent,canActivate:[AuthGaurdService]},
+  {path: 'payment', component: PaymentComponent},
   {path: 'iHomeService', component: IhomeBookingServiceComponent},
   {path: 'iHomeService/book/:id', component: IhomeBookingComponent},
   {path: 'payment', component: PaymentComponent},
