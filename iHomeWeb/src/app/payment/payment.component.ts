@@ -8,7 +8,7 @@ import { PaymentService, Payment } from '../service/payment.service'
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
-  payment : Payment = new Payment('', '', '');
+  payment : Payment = new Payment('', '', '', 0);
 
   constructor(
       private paymentService: PaymentService,

@@ -6,6 +6,7 @@ export class Payment {
     public paymentId: string,
     public paymentStatus: string,
     public paymentType: string,
+    public totalAmount: number,
   ) {
   }
 }
