@@ -18,5 +18,6 @@ public class Payment {
     private String paymentType;
     private String paymentStatus;
     private Date transactionDate;
+    private double totalAmount;
 
 }

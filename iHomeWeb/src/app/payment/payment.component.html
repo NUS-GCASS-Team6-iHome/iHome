@@ -13,6 +13,12 @@
              id="paymentStatus">
     </div>
 
+    <div class="form-group">
+      <label for="paymentStatus">Total Amount</label>
+      <input type="text" [(ngModel)]="payment.totalAmount" placeholder="Total Amount" name="totalAmount" class="form-control"
+             id="totalAmount">
+    </div>
+
     <button class="btn btn-success" (click)="submitPayment()">Submit Payment</button>
   </form>
 </div>
