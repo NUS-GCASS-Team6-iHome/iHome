@@ -30,6 +30,7 @@ export class SearchBookingService {
  
   apiRoot = 'http://localhost:8080/iHomeService/getSearchResult';
   //apiGetDetails = 'http://localhost:8080/iHomeService/getService/${serviceID}';
+  apiGetBookingList = 'http://localhost:8080/iHomeService/getBookingList/';
   
   serviceDetail: IHomeService;
 
@@ -38,6 +39,10 @@ export class SearchBookingService {
 
   search(searchCriteria: any): Observable<any>{
     return this.http.post(this.apiRoot, searchCriteria);
+  }
+
+  getBookingList(accountId: string) {
+    return this.http.get<IHomeService[]>(this.apiGetBookingList + accountId);
   }
 
   setServiceDetails(item: IHomeService){

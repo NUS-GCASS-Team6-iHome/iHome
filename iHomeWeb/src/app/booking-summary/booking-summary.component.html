@@ -1,14 +1,11 @@
 <div class="generic-container">
-    <br>
-        <hr class="style2">
-    <div class="panel panel-default">
-       
-      <div class="row">
-        <h2 class="text-center">Booking Summary</h2>
-      </div>
-      <div class="tablecontainer">
-        <table class="table table-hover">
-          <thead>
+  <div class="panel panel-default">
+
+    <h2 style="text-align: center;">Booking Summary</h2>
+
+    <div class="tablecontainer">
+      <table class="table table-hover">
+        <thead>
           <tr>
             <th>Service Name</th>
             <th>Service Description</th>
@@ -17,18 +14,18 @@
             <th>Unit</th>
             <th></th>
           </tr>
-          </thead>
-          <tbody>
-          <!-- <tr *ngFor="let product of serviceList">
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of serviceList">
             <td><span>{{product.serviceName}}</span></td>
             <td><span>{{product.serviceDescription}}</span></td>
             <td><span>{{product.serviceProviderID}}</span></td>
             <td><span>{{product.serviceRate}}</span></td>
             <td><span>{{product.serviceRateUnit}}</span></td>
             <td><button class="btn btn-success" (click)="Rate(product)">Rate</button></td>
-          </tr> -->
-          </tbody>
-        </table>
-      </div>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>

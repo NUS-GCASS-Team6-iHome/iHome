@@ -1,6 +1,36 @@
 <div class="col-md-12">
-    <h2 class="text-center">Rate this service</h2>
+    <h2 class="text-center">Service Rating</h2>
+    <br>
+    <hr class="style2">
+    <br>
     <form>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="serviceName">Service Name:</label>
+            </div>
+            <div class="col-md-6">
+                <span>{{selectedService.serviceName}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="serviceName">Service Description:</label>
+            </div>
+            <div class="col-md-6">
+                <span>{{selectedService.serviceDescription}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="serviceName">Service Provider Name:</label>
+            </div>
+            <div class="col-md-6">
+                <span>{{selectedService.serviceProviderID}}</span>
+            </div>
+        </div>
+        <br>
+        <hr class="style2">
+        <br>
         <div class="form-group">
             <label for="comment">Rating:</label>
             <br>
