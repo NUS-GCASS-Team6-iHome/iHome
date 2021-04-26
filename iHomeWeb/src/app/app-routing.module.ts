@@ -13,6 +13,7 @@ import { IhomeBookingComponent } from './ihome-booking/ihome-booking.component';
 import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
 import { RatingComponent } from './rating/rating.component';
 import { RatingSuccessComponent } from './rating/rating-success.component';
+import { PaymentSuccessComponent } from './payment/payment-success.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'booking-summary', component: BookingSummaryComponent},
   {path: 'rating', component: RatingComponent},
   {path: 'rating-success', component: RatingSuccessComponent},
+  {path: 'payment-success', component: PaymentSuccessComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: 'login'}
