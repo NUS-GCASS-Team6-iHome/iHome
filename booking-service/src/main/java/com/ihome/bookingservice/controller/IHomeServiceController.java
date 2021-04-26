@@ -1,8 +1,11 @@
 package com.ihome.bookingservice.controller;
 
 
+import com.ihome.bookingservice.entity.IHomeBooking;
 import com.ihome.bookingservice.entity.IHomeService;
+import com.ihome.bookingservice.service.IHomeBookingService;
 import com.ihome.bookingservice.service.IHomeServiceService;
+import dto.IHomeBookingDTO;
 import dto.IHomeServiceLoaderDTO;
 import dto.IHomeServiceSearchDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +25,9 @@ public class IHomeServiceController {
     @Autowired
     private IHomeServiceService iHomeServiceService;
 
+    @Autowired
+    private IHomeBookingService iHomeBookingService;
+
     @PostMapping("/save")
     public IHomeService saveIHomeService(@RequestBody IHomeServiceLoaderDTO iHomeServiceLoaderDTO){
         return iHomeServiceService.save(convertToDto(iHomeServiceLoaderDTO));
@@ -31,6 +37,17 @@ public class IHomeServiceController {
     public List<IHomeService> getSearchResult(@RequestBody IHomeServiceSearchDTO iHomeServiceSearchDTO){
         List<IHomeService> services = iHomeServiceService.searchByCriteria(iHomeServiceSearchDTO);
         return services;
+    }
+
+    @PostMapping("/saveBooking")
+    public IHomeBooking saveIHomeBooking(@RequestBody IHomeBookingDTO iHomeBookingDTO){
+        return iHomeBookingService.save(convertToBookingDto(iHomeBookingDTO));
+    }
+
+    private IHomeBooking convertToBookingDto(IHomeBookingDTO iHomeBookingDTO) {
+        ModelMapper modelMapper = new ModelMapper();
+        IHomeBooking iHomeBooking = modelMapper.map(iHomeBookingDTO, IHomeBooking.class);
+        return iHomeBooking;
     }
 
 //    @GetMapping("/getService")
