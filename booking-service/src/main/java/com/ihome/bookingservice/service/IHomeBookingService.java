@@ -18,7 +18,7 @@ public class IHomeBookingService {
         return iHomeBookingRepository.save(booking);
     }
 
-    public List<IHomeBooking> getBookingsByCustomerID(String customerID) {
+    public List<IHomeBooking> getBookingsByCustomerID(int customerID) {
         return iHomeBookingRepository.findByCustomerID(customerID);
     }
 

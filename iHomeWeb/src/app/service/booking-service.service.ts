@@ -21,6 +21,18 @@ export class serviceResults {
   }
 }
 
+export class IHomeBooking {
+  constructor(
+    public  bookingID: string,
+    public  serviceProviderID: string,
+    public  bookingDatetime: any,
+    public  totalServiceFee: string,
+    public  bookingStatus: string,
+    public  serviceID: string
+  ) {
+  }
+}
+
 @Injectable({
   providedIn: 'root'
 })

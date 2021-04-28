@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,9 +45,11 @@ public class IHomeServiceController {
         return iHomeBookingService.save(convertToBookingDto(iHomeBookingDTO));
     }
 
-    @GetMapping(value = "/getBookingList/{customerID}", produces = MediaType.TEXT_PLAIN_VALUE)
-    public List<IHomeBooking> getBookingList(@PathVariable String customerID){
-        return iHomeBookingService.getBookingsByCustomerID(customerID);
+    @GetMapping(value = "/getBookingList/{customerID}")
+    public ResponseEntity<List<IHomeBooking>> getBookingList(@PathVariable int customerID){
+        log.info("IHomeServiceController getBookingList()");
+        // return iHomeBookingService.getBookingsByCustomerID(customerID);
+        return ResponseEntity.ok(iHomeBookingService.getBookingsByCustomerID(customerID));
     }
 
     private IHomeBooking convertToBookingDto(IHomeBookingDTO iHomeBookingDTO) {
