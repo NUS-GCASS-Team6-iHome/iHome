@@ -44,6 +44,11 @@ public class IHomeServiceController {
         return iHomeBookingService.save(convertToBookingDto(iHomeBookingDTO));
     }
 
+    @GetMapping(value = "/getBookingList/{customerID}", produces = MediaType.TEXT_PLAIN_VALUE)
+    public List<IHomeBooking> getBookingList(@PathVariable String customerID){
+        return iHomeBookingService.getBookingsByCustomerID(customerID);
+    }
+
     private IHomeBooking convertToBookingDto(IHomeBookingDTO iHomeBookingDTO) {
         ModelMapper modelMapper = new ModelMapper();
         IHomeBooking iHomeBooking = modelMapper.map(iHomeBookingDTO, IHomeBooking.class);
