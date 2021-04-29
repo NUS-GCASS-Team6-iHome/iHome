@@ -6,6 +6,8 @@ export class Payment {
     public paymentId: string,
     public paymentStatus: string,
     public paymentType: string,
+    public accountId: string,
+    public bookingId: string,
     public totalAmount: number,
   ) {
   }

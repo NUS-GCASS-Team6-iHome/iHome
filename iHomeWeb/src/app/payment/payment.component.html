@@ -3,8 +3,11 @@
   <form method="POST">
     <div class="form-group">
       <label for="paymentType">Payment Type:</label>
-      <input type="text" [(ngModel)]="payment.paymentType" placeholder="Payment Type" name="paymentType" class="form-control"
-             id="paymentType">
+      <br>
+      <select [(ngModel)]="payment.paymentType" class="form-control" name="paymentType" id="paymentType">
+        <option value="Visa">Visa
+        <option value="Master">Master
+      </select>
     </div>
 
     <div class="form-group">
