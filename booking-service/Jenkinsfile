@@ -1,11 +1,11 @@
 pipeline {
 	agent any
 
-	// environment {
-	// 	dockerImage = ''
-	// 	registry = 'feifeiliang/booking-service-img'
-	// 	registryCredential='dockerhub'
-	// }
+	environment {
+		dockerImage = ''
+		registry = 'feifeiliang/booking-service-img'
+		registryCredential='dockerid'
+	}
 
 	tools{
 		maven "maven"
@@ -25,16 +25,16 @@ pipeline {
 				}
 			}
 		}
-		stage ('Uploading Image'){
-			steps {
-				script {
-					docker.withRegistry('', registryCredential){
-						dockerImage.push()
-					}
+		// stage ('Uploading Image'){
+		// 	steps {
+		// 		script {
+		// 			docker.withRegistry('', registryCredential){
+		// 				dockerImage.push()
+		// 			}
 
-				}
-			}
-		}
+		// 		}
+		// 	}
+		// }
 	}
 
 	post {
