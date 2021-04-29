@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { IHomeService } from './search-booking.service';
+import { IHomeBooking } from './booking-service.service';
 
 export class Rating {
   constructor(
@@ -16,18 +17,18 @@ export class Rating {
   providedIn: 'root'
 })
 export class RatingService {
-  private selectedService = new IHomeService('', '', '', '', '', 0, '');
+  private selectedBooking = new IHomeBooking('', '', '', '', '', '');
   constructor(private httpClient: HttpClient) { }
 
   public createRating(rating: Rating) {
     return this.httpClient.post<Rating>("http://localhost:9002/rating/", rating)
   }
 
-  setSelectedService(service: IHomeService) {
-    this.selectedService = service;
+  setSelectedBooking(booking: IHomeBooking) {
+    this.selectedBooking = booking;
   }
 
-  getSelectedService() {
-    return this.selectedService;
+  getSelectedBooking() {
+    return this.selectedBooking;
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { IHomeBooking } from './booking-service.service';
 
 export class IHomeService {
   constructor(
@@ -42,7 +43,7 @@ export class SearchBookingService {
   }
 
   getBookingList(accountId: string) {
-    return this.http.get<IHomeService[]>(this.apiGetBookingList + accountId);
+    return this.http.get<IHomeBooking[]>(this.apiGetBookingList + accountId);
   }
 
   setServiceDetails(item: IHomeService){

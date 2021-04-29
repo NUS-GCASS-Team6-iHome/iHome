@@ -6,18 +6,10 @@
     <form>
         <div class="row">
             <div class="col-md-6">
-                <label for="serviceName">Service Name:</label>
+                <label for="serviceName">Booking ID:</label>
             </div>
             <div class="col-md-6">
-                <span>{{selectedService.serviceName}}</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <label for="serviceName">Service Description:</label>
-            </div>
-            <div class="col-md-6">
-                <span>{{selectedService.serviceDescription}}</span>
+                <span>{{selectedBooking.bookingID}}</span>
             </div>
         </div>
         <div class="row">
@@ -25,7 +17,15 @@
                 <label for="serviceName">Service Provider Name:</label>
             </div>
             <div class="col-md-6">
-                <span>{{selectedService.serviceProviderID}}</span>
+                <span>{{selectedBooking.serviceProviderID}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="serviceName">Booking Date:</label>
+            </div>
+            <div class="col-md-6">
+                <span>{{selectedBooking.bookingDatetime | date:'longDate'}}</span>
             </div>
         </div>
         <br>

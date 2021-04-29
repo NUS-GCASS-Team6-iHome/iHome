@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountServiceService } from '../service/account-service.service';
+import { IHomeBooking } from '../service/booking-service.service';
 import { RatingService } from '../service/rating.service';
-import { IHomeService, SearchBookingService } from '../service/search-booking.service';
+import { SearchBookingService } from '../service/search-booking.service';
 @Component({
   selector: 'app-booking-summary',
   templateUrl: './booking-summary.component.html',
   styleUrls: ['./booking-summary.component.scss']
 })
 export class BookingSummaryComponent implements OnInit {
-  serviceList: IHomeService[];
+  serviceList: IHomeBooking[];
   accountId = '';
   constructor(
     private bookingService: SearchBookingService,
@@ -28,11 +29,11 @@ export class BookingSummaryComponent implements OnInit {
     // this.ratingService.setSelectedService(temp);
   }
 
-  handleGetBookingListSuccess(response: IHomeService[]) {
+  handleGetBookingListSuccess(response: IHomeBooking[]) {
     this.serviceList = response;
   }
-  Rate(item: IHomeService){
-    this.ratingService.setSelectedService(item);
+  Rate(item: IHomeBooking){
+    this.ratingService.setSelectedBooking(item);
     this.router.navigate(['rating'])
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountServiceService } from '../service/account-service.service';
+import { IHomeBooking } from '../service/booking-service.service';
 import { RatingService, Rating } from '../service/rating.service'
-import { IHomeService } from '../service/search-booking.service';
 
 @Component({
   selector: 'app-rating',
@@ -11,7 +11,7 @@ import { IHomeService } from '../service/search-booking.service';
 })
 export class RatingComponent implements OnInit {
   rating: Rating = new Rating('', '', '', '');
-  selectedService = new IHomeService('', '', '', '', '', 0, '');
+  selectedBooking = new IHomeBooking('', '', '', '','', '');
   constructor(
     private ratingService: RatingService,
     private accountService: AccountServiceService,
@@ -19,12 +19,12 @@ export class RatingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.selectedService = this.ratingService.getSelectedService();
+    this.selectedBooking = this.ratingService.getSelectedBooking();
   }
 
   create(): void {
     this.rating.accountid = this.accountService.getLoginAccount().accountid;
-    this.rating.serviceid = this.selectedService.serviceID;
+    this.rating.serviceid = this.selectedBooking.serviceID;
     this.ratingService.createRating(this.rating)
       .subscribe(data => {
        this.router.navigate(['rating-success'])
