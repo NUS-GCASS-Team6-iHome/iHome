@@ -15,6 +15,7 @@ pipeline {
 			steps {
 				// dir('/booking-service/')
 				sh "pwd"
+				dir('booking-service/') 
 				sh 'mvn --version'
 				sh 'mvn clean install'
 				// -f booking-service/pom.xml
