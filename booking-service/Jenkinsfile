@@ -3,11 +3,11 @@ pipeline {
 		dockerfile true
 	}
 
-	environment {
-		dockerImage = ''
-		registry = 'feifeiliang/booking-service-img'
-		registryCredential='dockerhub'
-	}
+	// environment {
+	// 	dockerImage = ''
+	// 	registry = 'feifeiliang/booking-service-img'
+	// 	registryCredential='dockerhub'
+	// }
 
 	tools{
 		maven "maven"
@@ -19,23 +19,23 @@ pipeline {
 				sh 'mvn clean install -f booking-service/pom.xml'
 			}
 		}
-		stage('Build Docker Image') {
-			steps {
-				script{
-					dockerImage = docker.build registry
-				}
-			}
-		}
-		stage ('Uploading Image'){
-			steps {
-				script {
-					docker.withRegistry('', registryCredential){
-						dockerImage.push()
-					}
+		// stage('Build Docker Image') {
+		// 	steps {
+		// 		script{
+		// 			dockerImage = docker.build registry
+		// 		}
+		// 	}
+		// }
+		// stage ('Uploading Image'){
+		// 	steps {
+		// 		script {
+		// 			docker.withRegistry('', registryCredential){
+		// 				dockerImage.push()
+		// 			}
 
-				}
-			}
-		}
+		// 		}
+		// 	}
+		// }
 	}
 
 	post {
