@@ -13,13 +13,14 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
+				dir('/booking-service/')
 				sh 'mvn --version'
-				sh 'mvn clean install -f booking-service/pom.xml'
+				sh 'mvn clean install'
+				// -f booking-service/pom.xml
 			}
 		}
 		stage('Build Docker Image') {
 			steps {
-				dir('/booking-service/')
 				script{
 					dockerImage = docker.build registry
 				}
