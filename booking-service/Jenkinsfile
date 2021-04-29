@@ -27,7 +27,9 @@ pipeline {
 			steps {
 				script{
 					sh "pwd"
-					dockerImage = docker.build registry
+					dir('booking-service/') {
+						dockerImage = docker.build registry
+					}
 				}
 			}
 		}
