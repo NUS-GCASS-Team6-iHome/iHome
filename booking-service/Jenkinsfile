@@ -13,7 +13,8 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				dir('/booking-service/')
+				// dir('/booking-service/')
+				sh "pwd"
 				sh 'mvn --version'
 				sh 'mvn clean install'
 				// -f booking-service/pom.xml
