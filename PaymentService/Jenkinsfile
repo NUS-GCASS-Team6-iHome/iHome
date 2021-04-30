@@ -3,7 +3,7 @@ pipeline {
 
 	environment {
 		dockerImage = ''
-		registry = 'feifeiliang/booking-service-img'
+		registry = 'feifeiliang/payment-service-img'
 		registryCredential='dockerid'
 	}
 
@@ -13,21 +13,21 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				// dir('/booking-service/')
+				// dir('/rating-service/')
 				sh "pwd"
-				dir('booking-service/') {
+				dir('PaymentService/') {
 					sh 'mvn --version'
-					sh 'mvn clean install -Dmaven.test.skip=true'
+					sh 'mvn clean install'
 				}
 				
-				// -f booking-service/pom.xml
+				// -f PaymentService/pom.xml
 			}
 		}
 		stage('Build Docker Image') {
 			steps {
 				script{
 					sh "pwd"
-					dir('booking-service/') {
+					dir('PaymentService/') {
 						dockerImage = docker.build registry
 					}
 				}
@@ -48,15 +48,15 @@ pipeline {
 		 // Stopping Docker containers for cleaner Docker run
      	stage('docker stop container') {
          	steps {
-            	sh 'docker ps -f name=bookingServiceContainer -q | xargs --no-run-if-empty docker container stop'
-            	sh 'docker container ls -a -fname=bookingServiceContainer -q | xargs -r docker container rm'
+            	sh 'docker ps -f name=paymentServiceContainer -q | xargs --no-run-if-empty docker container stop'
+            	sh 'docker container ls -a -fname=paymentServiceContainer -q | xargs -r docker container rm'
          }
        }
         // Running Docker container, make sure port 8096 is opened in 
     	stage('Docker Run') {
      		steps{
          		script {
-            		dockerImage.run("-p 8096:8085 --rm --name bookingServiceContainer")
+            		dockerImage.run("-p 8099:9001 --rm --name paymentServiceContainer")
          		}
       		}
     	}
