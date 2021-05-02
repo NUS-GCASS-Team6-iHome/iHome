@@ -48,11 +48,14 @@ export class IhomeBookingComponent implements OnInit {
   }
 
   book() {
-    this.bookService.booking(this.bookingDetails)
-        .subscribe(data => {
-          this.bookService.setBookingDetails(this.bookingDetails);
-          this.router.navigate(['payment'])
-        });
+        this.bookService.booking(this.bookingDetails).subscribe(
+          response => this.handlePostBookingSuccess(response),
+        );
+  }
+
+  handlePostBookingSuccess(response: IHomeBooking) {
+    this.bookService.setBookingDetails(response);
+    this.router.navigate(['payment'])
   }
 
 }

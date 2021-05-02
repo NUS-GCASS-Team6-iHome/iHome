@@ -69,10 +69,16 @@ export class IhomeBookingServiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchCriteria = new SearchCriteria('', this.minValue, this.maxValue, '' );
+    if (this.rateService.isBackFromViewRating) {
+      this.searchCriteria = this.searchBookings.getSearchCriteria();
+      this.search(this.searchCriteria);
+    }
   }
 
   search(searchCriteria: SearchCriteria){
     console.log(searchCriteria);
+    this.searchBookings.setSearchCriteria(this.searchCriteria);
+    this.rateService.setIsBackFromViewRating(false);
     this.searchBookings.search(searchCriteria).subscribe(
       data => {
         console.log(data);

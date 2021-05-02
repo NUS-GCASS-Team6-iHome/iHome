@@ -19,6 +19,7 @@ export class Rating {
 export class RatingService {
   private selectedBooking = new IHomeBooking('', '', '', '', '', '', '');
   private ratingList: Rating[];
+  isBackFromViewRating = false;
   constructor(private httpClient: HttpClient) { }
 
   public createRating(rating: Rating) {
@@ -44,5 +45,13 @@ export class RatingService {
 
   getSelectedRatingList() {
     return this.ratingList;
+  }
+
+  setIsBackFromViewRating(status: boolean) {
+    this.isBackFromViewRating = status;
+  }
+
+  getIsBackFromViewRating() {
+    return this.isBackFromViewRating;
   }
 }

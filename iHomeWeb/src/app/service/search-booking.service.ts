@@ -6,14 +6,14 @@ import { Account } from './account-service.service';
 
 export class IHomeService {
   constructor(
-    public serviceID:string,
+    public serviceID: string,
     public serviceName: string,
     public serviceDescription: string,
     public serviceProviderID: Account,
     public serviceType: string,
     public serviceRate: number,
     public serviceRateUnit: string,
-  ) {}
+  ) { }
 }
 
 export class SearchCriteria {
@@ -22,24 +22,25 @@ export class SearchCriteria {
     public minBudget: number,
     public maxBudget: number,
     public postalCode: string,
-  ) {}
+  ) { }
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchBookingService {
- 
+
   apiRoot = 'http://localhost:8085/iHomeService/getSearchResult';
   //apiGetDetails = 'http://localhost:8080/iHomeService/getService/${serviceID}';
   apiGetBookingList = 'http://localhost:8085/iHomeService/getBookingList/';
-  
-  serviceDetail: IHomeService;
 
-  constructor( private http: HttpClient) { 
+  serviceDetail: IHomeService;
+  searchCriteria = new SearchCriteria('', 0, 0, '');
+
+  constructor(private http: HttpClient) {
   }
 
-  search(searchCriteria: any): Observable<any>{
+  search(searchCriteria: any): Observable<any> {
     return this.http.post(this.apiRoot, searchCriteria);
   }
 
@@ -47,10 +48,17 @@ export class SearchBookingService {
     return this.http.get<IHomeBooking[]>(this.apiGetBookingList + accountId);
   }
 
-  setServiceDetails(item: IHomeService){
-   this.serviceDetail = item;
+  setServiceDetails(item: IHomeService) {
+    this.serviceDetail = item;
   }
-  getServiceDetails(){
+  getServiceDetails() {
     return this.serviceDetail;
-   }
+  }
+
+  setSearchCriteria(searchCriteria: SearchCriteria) {
+    this.searchCriteria = searchCriteria;
+  }
+  getSearchCriteria() {
+    return this.searchCriteria;
+  }
 }
