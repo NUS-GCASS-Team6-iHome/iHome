@@ -14,6 +14,7 @@ import { BookingSummaryComponent } from './booking-summary/booking-summary.compo
 import { RatingComponent } from './rating/rating.component';
 import { RatingSuccessComponent } from './rating/rating-success.component';
 import { PaymentSuccessComponent } from './payment/payment-success.component';
+import { ViewServiceRatingComponent } from './ihome-booking-service/view-service-rating.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'rating', component: RatingComponent},
   {path: 'rating-success', component: RatingSuccessComponent},
   {path: 'payment-success', component: PaymentSuccessComponent},
+  {path: 'view-rating', component: ViewServiceRatingComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: 'login'}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchBookingService, IHomeService, SearchCriteria } from '../service/search-booking.service';
 import { Options, LabelType } from "@angular-slider/ngx-slider";
+import { Rating, RatingService } from '../service/rating.service';
 
 // class IHomeService {
 //   constructor(
@@ -33,6 +34,7 @@ export class IhomeBookingServiceComponent implements OnInit {
 
   searchCriteria: SearchCriteria;
   serviceList: IHomeService[];
+  ratingList: Rating[];
   serviceTypes: {[key: string]: string} = {
     "AC": "Aircon Cleaning Service",
     "AR": "Aircon Troubleshooting and Repair Service",
@@ -61,7 +63,8 @@ export class IhomeBookingServiceComponent implements OnInit {
   show: boolean = false
   constructor(
     private searchBookings: SearchBookingService,
-    private router: Router
+    private router: Router,
+    private rateService: RatingService
   ) { }
 
   ngOnInit(): void {
@@ -83,6 +86,18 @@ export class IhomeBookingServiceComponent implements OnInit {
   book(service: IHomeService){
     this.searchBookings.setServiceDetails(service);
     this.router.navigate(["/iHomeService/book", service.serviceID]);
+  }
+
+  getRating(service: IHomeService){
+    this.rateService.getRatingList(service.serviceID).subscribe(
+      response => this.handleGetRatingListSuccess(response),
+    );
+  }
+
+  handleGetRatingListSuccess(response: Rating[]) {
+    this.ratingList = response;
+    this.rateService.setSelectedRatingList(this.ratingList);
+    this.router.navigate(['view-rating']);
   }
 
 }

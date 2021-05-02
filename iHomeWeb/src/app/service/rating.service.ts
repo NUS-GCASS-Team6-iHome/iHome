@@ -18,11 +18,17 @@ export class Rating {
 })
 export class RatingService {
   private selectedBooking = new IHomeBooking('', '', '', '', '', '', '');
+  private ratingList: Rating[];
   constructor(private httpClient: HttpClient) { }
 
   public createRating(rating: Rating) {
     return this.httpClient.post<Rating>("http://localhost:9002/rating/", rating)
   }
+
+  getRatingList(serviceId: string) {
+    return this.httpClient.get<Rating[]>("http://localhost:9002/rating/" + serviceId);
+  }
+
 
   setSelectedBooking(booking: IHomeBooking) {
     this.selectedBooking = booking;
@@ -30,5 +36,13 @@ export class RatingService {
 
   getSelectedBooking() {
     return this.selectedBooking;
+  }
+
+  setSelectedRatingList(ratingList: Rating[]) {
+    this.ratingList = ratingList;
+  }
+
+  getSelectedRatingList() {
+    return this.ratingList;
   }
 }

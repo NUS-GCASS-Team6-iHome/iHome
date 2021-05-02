@@ -46,6 +46,7 @@
             <th>Service Provider Name</th>
             <th>Price</th>
             <th>Unit</th>
+            <th>Rating</th>
             <th>Action</th>
           </tr>
           </thead>
@@ -56,6 +57,7 @@
             <td><span>{{product.serviceProviderID.username}}</span></td>
             <td><span>{{product.serviceRate}}</span></td>
             <td><span>{{product.serviceRateUnit}}</span></td>
+            <td><button class="btn btn-success" (click)="getRating(product)">View</button></td>
             <td><button class="btn btn-success" (click)="book(product)">Book</button></td>
           </tr>
           </tbody>

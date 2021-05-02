@@ -34,7 +34,7 @@ export class AccountComponent implements OnInit {
       this.accountNotFound = false;
       if (this.loginservice.authenticate(this.username, this.password, this.loginAccount)
       ) {
-        this.router.navigate(['home'])
+        this.router.navigate(['iHomeService'])
         this.invalidLogin = false
       } else
         this.invalidLogin = true

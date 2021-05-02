@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AccountServiceService } from '../service/account-service.service';
-import { BookingServiceService, IHomeBooking, searchCriteria } from '../service/booking-service.service';
+import { BookingServiceService, IHomeBooking } from '../service/booking-service.service';
 import { SearchBookingService, IHomeService } from '../service/search-booking.service';
 
 

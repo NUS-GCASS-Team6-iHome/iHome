@@ -20,6 +20,7 @@ import { RatingComponent } from './rating/rating.component';
 import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
 import { RatingSuccessComponent } from './rating/rating-success.component';
 import { PaymentSuccessComponent } from './payment/payment-success.component';
+import { ViewServiceRatingComponent } from './ihome-booking-service/view-service-rating.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PaymentSuccessComponent } from './payment/payment-success.component';
     RatingComponent,
     BookingSummaryComponent,
     RatingSuccessComponent,
-    PaymentSuccessComponent
+    PaymentSuccessComponent,
+    ViewServiceRatingComponent
   ],
   imports: [
     BrowserModule,

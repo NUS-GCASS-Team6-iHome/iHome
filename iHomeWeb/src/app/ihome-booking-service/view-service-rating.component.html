@@ -1,0 +1,23 @@
+<div class="generic-container">
+    <div class="panel panel-default">
+  
+      <h2 style="text-align: center;">View Rating</h2>
+  
+      <div class="tablecontainer">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Rating</th>
+              <th>Comment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rating of ratingList">
+              <td><span>{{rating.rating}}</span></td>
+              <td><span>{{rating.comment}}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
