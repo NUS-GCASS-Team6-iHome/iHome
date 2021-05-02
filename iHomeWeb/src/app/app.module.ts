@@ -19,6 +19,7 @@ import { IhomeBookingComponent } from './ihome-booking/ihome-booking.component';
 import { RatingComponent } from './rating/rating.component';
 import { BookingSummaryComponent } from './booking-summary/booking-summary.component';
 import { RatingSuccessComponent } from './rating/rating-success.component';
+import { PaymentSuccessComponent } from './payment/payment-success.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RatingSuccessComponent } from './rating/rating-success.component';
     IhomeBookingComponent,
     RatingComponent,
     BookingSummaryComponent,
-    RatingSuccessComponent
+    RatingSuccessComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,
