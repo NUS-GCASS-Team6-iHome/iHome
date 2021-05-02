@@ -30,6 +30,7 @@ export class PaymentComponent implements OnInit {
   this.accountId = this.accountService.getLoginAccount().accountid;
   this.booking = this.bookingService.getBookingDetails();
   this.payment.totalAmount = Number(this.booking.totalServiceFee);
+  this.payment.bookingId = this.booking.bookingID;
   }
 
   calcDiscountedPrice(): void{
