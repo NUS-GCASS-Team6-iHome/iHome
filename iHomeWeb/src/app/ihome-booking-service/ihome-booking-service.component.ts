@@ -75,6 +75,7 @@ export class IhomeBookingServiceComponent implements OnInit {
         console.log(data);
         this.show = true;
         this.serviceList = data;
+        console.log(JSON.stringify(this.serviceList));
 
       }
     )

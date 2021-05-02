@@ -17,7 +17,7 @@ export class Rating {
   providedIn: 'root'
 })
 export class RatingService {
-  private selectedBooking = new IHomeBooking('', '', '', '', '', '');
+  private selectedBooking = new IHomeBooking('', '', '', '', '', '', '');
   constructor(private httpClient: HttpClient) { }
 
   public createRating(rating: Rating) {

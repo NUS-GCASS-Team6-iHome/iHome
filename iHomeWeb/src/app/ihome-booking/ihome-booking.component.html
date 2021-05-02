@@ -4,7 +4,7 @@
     <div class="panel panel-default">
        
       <div class="row">
-        <h2 class="text-center">Booking Cart</h2>
+        <h2 class="text-center">Booking Details</h2>
       </div>
       <div class="tablecontainer">
         <table class="table table-hover">
@@ -22,14 +22,26 @@
           <tbody>
           <tr>
             <td><span>{{bookingService.serviceName}}</span></td>
-            <td><span>{{bookingService.serviceProviderID}}</span></td>
+            <td><span>{{bookingService.serviceProviderID.username}}</span></td>
             <td><span>{{bookingService.serviceRate}}</span></td>
             <td><span>{{bookingService.serviceRateUnit}}</span></td>
-            <td></td>
+            <td>
+              <input type="number" [(ngModel)]="quantity" placeholder="Quantity" name="quantity" class="form-control"
+                id="quantity" (change)="onQuantityChange()">
+            </td>
+            <td>
+              <input type="date" [(ngModel)]="bookingDetails.bookingDatetime" placeholder="Service Date" name="bookingDatetime" class="form-control"
+                id="bookingDatetime">
+            </td>
+            <td>
+              <span>{{bookingDetails.totalServiceFee}}</span>
+            </td>
             <!-- <td><button class="btn btn-success" (click)="book(product)">Book</button></td> -->
           </tr>
           </tbody>
         </table>
       </div>
+
+      <button class="btn btn-success" (click)="book()">Book</button>
     </div>
   </div>

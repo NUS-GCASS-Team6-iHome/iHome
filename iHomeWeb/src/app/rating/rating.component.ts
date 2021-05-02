@@ -11,7 +11,7 @@ import { RatingService, Rating } from '../service/rating.service'
 })
 export class RatingComponent implements OnInit {
   rating: Rating = new Rating('', '', '', '');
-  selectedBooking = new IHomeBooking('', '', '', '','', '');
+  selectedBooking = new IHomeBooking('', '', '', '','', '', '');
   constructor(
     private ratingService: RatingService,
     private accountService: AccountServiceService,

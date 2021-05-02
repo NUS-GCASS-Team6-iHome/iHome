@@ -53,7 +53,7 @@
           <tr *ngFor="let product of serviceList">
             <td><span>{{product.serviceName}}</span></td>
             <td><span>{{product.serviceDescription}}</span></td>
-            <td><span>{{product.serviceProviderID}}</span></td>
+            <td><span>{{product.serviceProviderID.username}}</span></td>
             <td><span>{{product.serviceRate}}</span></td>
             <td><span>{{product.serviceRateUnit}}</span></td>
             <td><button class="btn btn-success" (click)="book(product)">Book</button></td>

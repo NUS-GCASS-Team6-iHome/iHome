@@ -22,8 +22,10 @@ public class IHomeService {
     private String serviceName;
     @Column(name="SVC_DESC")
     private String serviceDescription;
-    @Column(name="SVC_PRVD_ID")
-    private Integer serviceProviderID;
+    // @Column(name="SVC_PRVD_ID")
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "SVC_PRVD_ID", referencedColumnName = "ACCOUNTID")
+    private Account serviceProviderID;
     @Column(name="SVC_TYPE")
     @Enumerated(EnumType.STRING)
     private ServiceType serviceType;
@@ -58,11 +60,11 @@ public class IHomeService {
         this.serviceDescription = serviceDescription;
     }
 
-    public Integer getServiceProviderID() {
+    public Account getServiceProviderID() {
         return serviceProviderID;
     }
 
-    public void setServiceProviderID(Integer serviceProviderID) {
+    public void setServiceProviderID(Account serviceProviderID) {
         this.serviceProviderID = serviceProviderID;
     }
 

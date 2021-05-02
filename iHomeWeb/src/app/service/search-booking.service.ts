@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { IHomeBooking } from './booking-service.service';
+import { Account } from './account-service.service';
 
 export class IHomeService {
   constructor(
     public serviceID:string,
     public serviceName: string,
     public serviceDescription: string,
-    public serviceProviderID: string,
+    public serviceProviderID: Account,
     public serviceType: string,
     public serviceRate: number,
     public serviceRateUnit: string,
