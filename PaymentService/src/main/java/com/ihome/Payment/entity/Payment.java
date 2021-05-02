@@ -16,7 +16,7 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer paymentId;
     private Integer accountId;
-    private Integer bookingId;
+    private String bookingId;
     private String paymentType;
     private String paymentStatus;
     private Date transactionDate;
