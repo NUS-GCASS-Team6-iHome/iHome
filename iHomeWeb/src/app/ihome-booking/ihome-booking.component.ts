@@ -14,7 +14,7 @@ export class IhomeBookingComponent implements OnInit {
 
   bookingServiceID !: string;
   bookingService: IHomeService;
-  bookingDetails = new IHomeBooking('', '', '', '', '', '', '');
+  bookingDetails = new IHomeBooking('', '', '', '', 'Y', '', '');
   quantity = 0;
   constructor(
     private searchBookings: SearchBookingService,
@@ -29,7 +29,7 @@ export class IhomeBookingComponent implements OnInit {
     // get service info
     this.bookingService = this.searchBookings.getServiceDetails();
     this.bookingDetails.customerID = this.accountService.getLoginAccount().accountid;
-    this.bookingDetails.serviceProviderID = this.bookingService.serviceProviderID.accountid;
+    this.bookingDetails.serviceProviderID = this.bookingService.serviceProviderID;
     this.bookingDetails.serviceID = this.bookingService.serviceID;
     console.log(this.bookingService);
 

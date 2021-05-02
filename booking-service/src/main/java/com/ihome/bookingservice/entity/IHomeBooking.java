@@ -27,8 +27,10 @@ public class IHomeBooking {
     @Column(name="customer_id")
     private int customerID;
 
-    @Column(name="svc_prvd_id")
-    private int serviceProviderID;
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "svc_prvd_id", referencedColumnName = "ACCOUNTID")
+    // @Column(name="svc_prvd_id")
+    private Account serviceProviderID;
 
     @Column(name="booking_datetime")
     private Date bookingDatetime;
@@ -63,11 +65,11 @@ public class IHomeBooking {
         this.customerID = customerID;
     }
 
-    public int getServiceProviderID() {
+    public Account getServiceProviderID() {
         return serviceProviderID;
     }
 
-    public void setServiceProviderID(int serviceProviderID) {
+    public void setServiceProviderID(Account serviceProviderID) {
         this.serviceProviderID = serviceProviderID;
     }
 

@@ -9,7 +9,7 @@
           <tr>
             <th>Booking ID</th>
             <th>Service Provider Name</th>
-            <th>Booking Date</th>
+            <th>Service Date</th>
             <th>Price</th>
             <th>Booking Status</th>
             <th></th>
@@ -18,7 +18,7 @@
         <tbody>
           <tr *ngFor="let product of serviceList">
             <td><span>{{product.bookingID}}</span></td>
-            <td><span>{{product.serviceProviderID}}</span></td>
+            <td><span>{{product.serviceProviderID.username}}</span></td>
             <td><span>{{product.bookingDatetime | date:'longDate'}}</span></td>
             <td><span>{{product.totalServiceFee}}</span></td>
             <td><span>{{product.bookingStatus}}</span></td>

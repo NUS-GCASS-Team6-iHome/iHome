@@ -40,9 +40,14 @@ public class IHomeServiceController {
         return services;
     }
 
+    // @PostMapping("/saveBooking")
+    // public IHomeBooking saveIHomeBooking(@RequestBody IHomeBookingDTO iHomeBookingDTO){
+        // return iHomeBookingService.save(convertToBookingDto(iHomeBookingDTO));
+    // }
+
     @PostMapping("/saveBooking")
-    public IHomeBooking saveIHomeBooking(@RequestBody IHomeBookingDTO iHomeBookingDTO){
-        return iHomeBookingService.save(convertToBookingDto(iHomeBookingDTO));
+    public IHomeBooking saveIHomeBooking(@RequestBody IHomeBooking iHomeBooking){
+        return iHomeBookingService.save(iHomeBooking);
     }
 
     @GetMapping(value = "/getBookingList/{customerID}")

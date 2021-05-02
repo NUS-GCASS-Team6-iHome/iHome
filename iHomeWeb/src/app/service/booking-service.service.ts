@@ -25,7 +25,7 @@ export class serviceResults {
 export class IHomeBooking {
   constructor(
     public  bookingID: string,
-    public  serviceProviderID: string,
+    public  serviceProviderID: any,
     public  bookingDatetime: any,
     public  totalServiceFee: string,
     public  bookingStatus: string,
