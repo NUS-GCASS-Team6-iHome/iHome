@@ -11,13 +11,26 @@
     </div>
 
     <div class="form-group">
+      <label for="creditCardNum">Credit Card Number</label>
+      <input type="text" [(ngModel)]="creditCardNum" placeholder="Credit Card Number" name="creditCardNum" class="form-control"
+             id="creditCardNum">
+    </div>
+
+    <div class="form-group">
+      <label for="promoCode">Promotion Code</label>
+      <input type="text" [(ngModel)]="promoCode" placeholder="Promo Code" name="promoCode" class="form-control"
+             id="promoCode">
+      <button class="btn btn-success" id="promoBtn" [disabled]="isDisabled" (click)="calcDiscountedPrice()">Enter Promotion Code</button>
+    </div>
+
+    <div class="form-group">
       <label for="paymentStatus">Payment Status</label>
       <input type="text" [(ngModel)]="payment.paymentStatus" placeholder="Payment Status" name="paymentStatus" class="form-control"
              id="paymentStatus">
     </div>
 
     <div class="form-group">
-      <label for="paymentStatus">Total Amount</label>
+      <label for="totalAmount">Total Amount</label>
       <input type="text" [(ngModel)]="payment.totalAmount" placeholder="Total Amount" name="totalAmount" class="form-control"
              id="totalAmount">
     </div>

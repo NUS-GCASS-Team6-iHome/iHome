@@ -36,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/payment-service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/iHomeWeb/src/app/payment" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -45,11 +45,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dixon\Documents\GitHub\iHome\iHomeWeb\src\app\payment" />
       <recent name="C:\Users\Dixon\Documents\GitHub\iHome\payment-service\src\main\resources" />
       <recent name="C:\Users\Dixon\Documents\GitHub\iHome\payment-service\src\main\java\com\ihome\payment" />
       <recent name="C:\Users\Dixon\Documents\GitHub\iHome\PaymentService\src\test\java\com\ihome\Payment" />
       <recent name="C:\Users\Dixon\Documents\GitHub\iHome\PaymentService\src\main\java\com\ihome\Payment\service" />
-      <recent name="C:\Users\Dixon\Documents\GitHub\iHome\PaymentService" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dixon\Documents\GitHub\iHome\PaymentService\src\test\java\com\ihome" />

@@ -10,8 +10,11 @@ import { IHomeBooking } from '../service/booking-service.service';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
-  payment : Payment = new Payment('', '', '' ,'','', 0);
+  payment : Payment = new Payment('', '', '' ,'','', 100);
   accountId = '';
+  creditCardNum = '';
+  promoCode = '';
+  isDisabled = false;
 
   constructor(
       private paymentService: PaymentService,
@@ -22,6 +25,18 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   this.accountId = this.accountService.getLoginAccount().accountid;
   this.payment.paymentStatus = 'testing-';
+  }
+
+  calcDiscountedPrice(): void{
+    if(this.promoCode === 'ihome20'){
+      this.payment.totalAmount = this.payment.totalAmount*0.8;
+      this.isDisabled = true;
+      console.log('TotalAmt : ' + this.payment.totalAmount);
+    }
+    else{
+      alert('Invalid Promotion Code');
+    }
+
   }
 
   submitPayment(): void {
