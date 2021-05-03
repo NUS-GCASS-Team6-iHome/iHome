@@ -4,11 +4,17 @@ node {
         //         git branch: 'SP2', url: 'git@github.com:kalyan11021980/angular-ssr-starter.git'
         // }
         agent any
+        def dockerImage
         environment {
                 dockerImage = ''
                 registry = 'feifeiliang/ihome-web-img'
                 registryCredential='dockerid'
         }
+
+        stage('Clone repository') {               
+             
+            checkout scm    
+        } 
 
         stage('Build image') {
                 dockerImage = docker.build registry
