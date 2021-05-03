@@ -3,6 +3,7 @@ node {
         // stage('Checkout SCM'){
         //         git branch: 'SP2', url: 'git@github.com:kalyan11021980/angular-ssr-starter.git'
         // }
+        def app  
         environment {
                 dockerImage = ''
                 registry = 'feifeiliang/ihome-web-img'
