@@ -3,16 +3,37 @@ node {
         // stage('Checkout SCM'){
         //         git branch: 'SP2', url: 'git@github.com:kalyan11021980/angular-ssr-starter.git'
         // }
+        environment {
+                dockerImage = ''
+                registry = 'feifeiliang/ihome-web-img'
+                registryCredential='dockerid'
+        }
 
-        stage('Install node modules'){
-        		dir ('iHomeWeb'){
-        			sh "npm install"
-        		}
+        stage('Build image') {
+                dockerImage = docker.build registry
         }
-        stage('Build'){
-                sh "npm run build:ssr"
+
+        stage('Test image') {
+  
+
+                dockerImage.inside {
+                        sh 'echo "Tests passed"'
+                }
         }
-        stage('Deploy'){
-                sh "pm2 restart all"
+
+        stage('Push image') {
+        
+                docker.withRegistry('', registryCredential) {
+                        // app.push("${env.BUILD_NUMBER}")
+                        dockerImage.push()
+                }
         }
+
+        // Stopping Docker containers for cleaner Docker run
+        stage('docker stop container') {
+                steps {
+                sh 'docker ps -f name=ihomeWebAppContainer -q | xargs --no-run-if-empty docker container stop'
+                sh 'docker container ls -a -fname=ihomeWebAppContainer -q | xargs -r docker container rm'
+         }
+       }
 }
