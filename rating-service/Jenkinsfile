@@ -53,13 +53,13 @@ pipeline {
          }
        }
         // Running Docker container, make sure port 8096 is opened in 
-    	stage('Docker Run') {
-     		steps{
-         		script {
-            		dockerImage.run("-p 8098:9002 --rm --name ratingServiceContainer")
-         		}
-      		}
-    	}
+    	// stage('Docker Run') {
+     // 		steps{
+     //     		script {
+     //        		dockerImage.run("-p 8098:9002 --rm --name ratingServiceContainer")
+     //     		}
+     //  		}
+    	// }
 
 	}
 
