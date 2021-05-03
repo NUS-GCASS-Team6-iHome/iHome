@@ -17,6 +17,7 @@ node {
         } 
 
         stage('Build image') {
+                sh "pwd"
                 dockerImage = docker.build registry
         }
 
