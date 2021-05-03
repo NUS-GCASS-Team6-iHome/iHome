@@ -30,9 +30,9 @@ export class SearchCriteria {
 })
 export class SearchBookingService {
 
-  apiRoot = 'http://localhost:8085/iHomeService/getSearchResult';
+  apiRoot = 'http://54.255.186.152:8096/iHomeService/getSearchResult';
   //apiGetDetails = 'http://localhost:8080/iHomeService/getService/${serviceID}';
-  apiGetBookingList = 'http://localhost:8085/iHomeService/getBookingList/';
+  apiGetBookingList = 'http://54.255.186.152:8096/iHomeService/getBookingList/';
 
   serviceDetail: IHomeService;
   searchCriteria = new SearchCriteria('', 0, 0, '');

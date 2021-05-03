@@ -23,11 +23,11 @@ export class RatingService {
   constructor(private httpClient: HttpClient) { }
 
   public createRating(rating: Rating) {
-    return this.httpClient.post<Rating>("http://localhost:9002/rating/", rating)
+    return this.httpClient.post<Rating>("http://13.213.29.113:8098/rating/", rating)
   }
 
   getRatingList(serviceId: string) {
-    return this.httpClient.get<Rating[]>("http://localhost:9002/rating/" + serviceId);
+    return this.httpClient.get<Rating[]>("http://13.213.29.113:8098/rating/" + serviceId);
   }
 
 

@@ -22,6 +22,6 @@ export class PaymentService {
   constructor(private httpClient: HttpClient) { }
 
   public createPayment(payment: Payment) {
-      return this.httpClient.post<Payment>("http://localhost:9001/payments/", payment)
+      return this.httpClient.post<Payment>("http://13.213.40.78:8099/payments/", payment)
     }
 }

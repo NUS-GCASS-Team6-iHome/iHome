@@ -50,9 +50,9 @@ public class IHomeServiceController {
         return iHomeBookingService.save(iHomeBooking);
     }
 
-    @GetMapping(value = "/getBookingList/{customerID}")
+    @GetMapping(value = "/getBookingLiAccess-Controlst/{customerID}")
     public ResponseEntity<List<IHomeBooking>> getBookingList(@PathVariable int customerID){
-        log.info("IHomeServiceController getBookingList()");
+        //log.info("IHomeServiceController getBookingList()");
         // return iHomeBookingService.getBookingsByCustomerID(customerID);
         return ResponseEntity.ok(iHomeBookingService.getBookingsByCustomerID(customerID));
     }

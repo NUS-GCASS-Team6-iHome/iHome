@@ -19,6 +19,8 @@ export class Account {
 export class AccountServiceService {
   private loginAccount = new Account('', '', '', '', '', '', '');
 
+  ROOT_URI:String = "http://52.221.181.158:8097/"
+
   constructor(private httpClient: HttpClient) { }
 
   setLoginAccount(account: Account) {
@@ -30,14 +32,14 @@ export class AccountServiceService {
   }
 
   public register(account: Account) {
-    return this.httpClient.post<Account>("http://localhost:9003/account/", account)
+    return this.httpClient.post<Account>( this.ROOT_URI + "account/", account)
   }
 
   public getAccount(username: string) {
-    return this.httpClient.get<Account>('http://localhost:9003/account' + "/" + username);
+    return this.httpClient.get<Account>(this.ROOT_URI +'account' + "/" + username);
   }
 
   public updateAccount(account: Account) {
-    return this.httpClient.put<Account>("http://localhost:9003/account/", account)
+    return this.httpClient.put<Account>(this.ROOT_URI + "account/", account)
   }
 }

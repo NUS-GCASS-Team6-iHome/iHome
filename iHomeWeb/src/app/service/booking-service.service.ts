@@ -39,7 +39,7 @@ export class IHomeBooking {
   providedIn: 'root'
 })
 export class BookingServiceService {
-  apiPostBooking = 'http://localhost:8085/iHomeService/saveBooking/';
+  apiPostBooking = 'http://54.255.186.152:8096/iHomeService/saveBooking/';
   bookingDetails = new IHomeBooking('', '', '', '', '', '', '');
   constructor(private httpClient: HttpClient
   ) {}
@@ -54,7 +54,7 @@ export class BookingServiceService {
 
   search(searchCriteria: searchCriteria){
     // console.log("search");
-    // return this.httpClient.post<searchCriteria>('http://localhost:8085/getSearchResult', )
+     return this.httpClient.post<searchCriteria>('http://54.255.186.152:8096/getSearchResult', searchCriteria)
   }
 
   public booking(bookingDetails: IHomeBooking) {
